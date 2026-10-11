@@ -1,0 +1,16 @@
+.DS_Store
+.claude/
+
+# 早期草稿，仅保留在本地
+cloud-notes.md
+debug_game.py
+detailed_simulation.py
+analyze_3x3.js
+demo_3x3.html
+find_infinite_loops.js
+systematic_search.js
+ten_steps_game.py
+verify_high_scores.js
+verify_score.py
+verify_solution.js
+article/image-4-old-b-sink.png

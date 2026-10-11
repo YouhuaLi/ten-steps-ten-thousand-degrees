@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>十步万度</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>十步万度</h1>
+            <div class="game-info">
+                <div class="operations-left">
+                    剩余操作: <span id="operationsLeft">10</span>
+                </div>
+                <div class="score">
+                    总度数: <span id="score">0°</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-board">
+                <div class="grid-container" id="gridContainer">
+                    <!-- 5x5网格将由JavaScript动态生成 -->
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="newGameBtn" class="btn btn-primary">开始新游戏</button>
+                <button id="resetBtn" class="btn btn-secondary">重置</button>
+                <div class="speed-selector">
+                    <label for="speed">速度:</label>
+                    <select id="speed">
+                        <option value="slow">慢速</option>
+                        <option value="medium" selected>中速</option>
+                        <option value="fast">快速</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="rules">
+                <h3>游戏规则：</h3>
+                <ul>
+                    <li>点击圆圈，指针顺时针旋转90°</li>
+                    <li>如果旋转后指针指向另一个圆圈，该圆圈也会旋转90°</li>
+                    <li>连锁反应可以继续传播</li>
+                    <li>每次旋转累计90度</li>
+                    <li>总共有10次点击机会</li>
+                    <li>目标：总旋转度数达到100,000度</li>
+                </ul>
+            </div>
+        </main>
+
+        <div id="gameMessage" class="message hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

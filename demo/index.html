@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>十步万度 · 群论演示</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>十步万度 <span class="sub">沙堆群 / 转子路由群演示</span></h1>
+      <p class="lead">规则与原版游戏相同：点击一格，箭头顺时针转 90°，若转后指向另一格，该格也转 90°，连锁直到箭头指向棋盘外。这里不限步数，并可以演示单位元与逆元。</p>
+    </header>
+
+    <section class="stats">
+      <div class="stat"><div class="label">点击次数</div><div class="value" id="stClicks">0</div></div>
+      <div class="stat"><div class="label">旋转次数</div><div class="value" id="stRot">0</div></div>
+      <div class="stat"><div class="label">总度数</div><div class="value" id="stDeg">0°</div></div>
+      <div class="stat"><div class="label">回到初始最少还需</div><div class="value" id="stInv">0 次</div></div>
+      <div class="stat"><div class="label">当前元素的阶</div><div class="value" id="stOrd">1</div></div>
+    </section>
+
+    <main class="layout">
+      <div class="board-col">
+        <div class="board" id="board"></div>
+        <div class="board-tools">
+          <label class="chk"><input type="checkbox" id="showCounts" checked> 显示每格点击次数</label>
+          <label class="speed">速度
+            <select id="speed">
+              <option value="400">慢</option>
+              <option value="160" selected>中</option>
+              <option value="50">快</option>
+              <option value="0">瞬间</option>
+            </select>
+          </label>
+          <button class="btn secondary" id="btnRandom">随机点 5 次</button>
+          <button class="btn secondary" id="btnReset">重置棋盘</button>
+        </div>
+        <div class="status" id="status">点击任意一格开始。</div>
+      </div>
+
+      <div class="panels">
+        <section class="panel">
+          <h2>单位元演示</h2>
+          <p>下列点击方案都是沙堆群的单位元：无论当前局面如何，整套点完之后 25 个箭头回到施加前的状态，只是度数增加了。</p>
+          <div class="row">
+            <select id="idSelect"></select>
+            <button class="btn primary" id="btnIdentity">施加到当前局面</button>
+          </div>
+          <div class="mini" id="idPreview"></div>
+          <p class="note" id="idNote"></p>
+        </section>
+
+        <section class="panel">
+          <h2>逆元演示</h2>
+          <p>当前局面由一组点击 σ 从全朝上产生。它的逆元 σ<sup>-1</sup> 是另一组点击，施加后棋盘回到全朝上。下面给出的是点击次数最少的逆元代表。</p>
+          <div class="row">
+            <button class="btn primary" id="btnInverse">施加逆元</button>
+          </div>
+          <div class="mini" id="invPreview"></div>
+          <p class="note" id="invNote"></p>
+        </section>
+
+        <section class="panel small">
+          <h2>原理速览</h2>
+          <ul>
+            <li>总度数只依赖点击的多重集，与顺序无关（阿贝尔性质）。</li>
+            <li>局面与群元素一一对应，共 32,565,539,635,200 种，群为 ℤ₄⊕ℤ₁₆⊕ℤ₄₈⊕ℤ₁₀₂₉₆₀²。</li>
+            <li>在同一格点 4 次等价于它的每个网格内邻居各点 1 次，这是全部关系的来源。</li>
+            <li>逆元按 σ<sup>-1</sup> = Δ′x − σ 计算，x 是满足 Δ′x ≥ σ 的最小整数向量。</li>
+            <li>元素的阶是使 k·Δ′<sup>-1</sup>σ 为整数向量的最小正整数 k。</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+  </div>
+  <script src="group.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
