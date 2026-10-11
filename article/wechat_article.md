@@ -866,8 +866,6 @@ n=1 到 4 和 n=8 到 10 各有多个最优解，图中画的是字典序第一�
 参考链接
 ==
 
-https://arxiv.org/abs/0801.3306
-
-https://en.wikipedia.org/wiki/Abelian_sandpile_model
-
-https://en.wikipedia.org/wiki/Chip-firing_game
+1. A. E. Holroyd, L. Levine, K. Mészáros, Y. Peres, J. Propp, D. B. Wilson, [Chip-Firing and Rotor-Routing on Directed Graphs](https://arxiv.org/abs/0801.3306), 2008.
+2. Wikipedia: [Abelian sandpile model](https://en.wikipedia.org/wiki/Abelian_sandpile_model)
+3. Wikipedia: [Chip-firing game](https://en.wikipedia.org/wiki/Chip-firing_game)
