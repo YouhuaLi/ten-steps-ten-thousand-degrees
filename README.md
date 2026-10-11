@@ -3,8 +3,12 @@
 一个 5×5 箭头小游戏，以及它背后的转子路由 / 沙堆群数学。
 A 5×5 arrow-rotation puzzle and the rotor-router / sandpile-group mathematics behind it.
 
-**在线演示 · Live demo:** `demo/` 目录是一个纯静态页面，可直接用 GitHub Pages 发布。
-The `demo/` folder is a static page ready for GitHub Pages.
+**在线地址 · Live pages**
+
+| | 地址 · URL |
+|---|---|
+| 原版游戏 · Original game | <https://youhuali.github.io/ten-steps-ten-thousand-degrees/> |
+| 群论演示 · Group-theory demo | <https://youhuali.github.io/ten-steps-ten-thousand-degrees/demo/> |
 
 ---
 
@@ -45,7 +49,7 @@ The board is a 5×5 grid of arrows, all pointing up at the start. Clicking a cel
 
 A. E. Holroyd, L. Levine, K. Mészáros, Y. Peres, J. Propp, D. B. Wilson, *Chip-Firing and Rotor-Routing on Directed Graphs*, [arXiv:0801.3306](https://arxiv.org/abs/0801.3306).
 
-## 发布演示 · Publishing the demo
+## 发布方式 · How the pages are published
 
-在仓库 Settings → Pages 中选择 `main` 分支根目录，然后访问 `https://<user>.github.io/<repo>/demo/`。
-In Settings → Pages choose the `main` branch, root folder, then open `https://<user>.github.io/<repo>/demo/`.
+GitHub Pages 从 `main` 分支根目录发布整个仓库：根目录的 `index.html` 是原版游戏，`demo/` 子目录是群论演示页，图片等静态文件也可直接访问。
+GitHub Pages serves the whole repository from the root of `main`: the root `index.html` is the original game, the `demo/` subfolder is the group-theory demo, and images and other static files are reachable directly.
