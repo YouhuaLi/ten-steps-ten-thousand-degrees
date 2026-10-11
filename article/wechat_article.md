@@ -41,7 +41,7 @@
 
 双向图（bidirected）：若 A、B 相邻，则 A 到 B 和 B 到 A 的边各有一条。本文中，如果一个图中去掉全局汇点后，剩下的图是双向图，我们称这个图是具有全局汇点的双向图。
 
-![alt text](image-4.png)
+![alt text](https://raw.githubusercontent.com/YouhuaLi/ten-steps-ten-thousand-degrees/main/article/image-4.png)
 
 上图是一个具有全局汇点的双向图的例子，其中d是全局汇点。
 
@@ -99,7 +99,7 @@ $$
 
 接下来定义一个双向图上的筹码发射游戏。首先想象双向图的每个点上有一定数量的筹码，这样的状态称为一个“筹码配置”（chip configuration）。比如下图表示一个 3 个点的双向图，其中一个点上有 3 个筹码，其他两个点没有筹码：
 
-![](image-2.png)
+![](https://raw.githubusercontent.com/YouhuaLi/ten-steps-ten-thousand-degrees/main/article/image-2.png)
 
 当图中所有非汇点上的筹码数量都小于其出度时，称这个筹码配置是“稳定”（stable）的，否则就是不稳定的，或“活跃”（active）的。
 
@@ -107,7 +107,7 @@ $$
 
 对不稳定的筹码配置，任意选择一个筹码数量不小于其出度的点，沿它的每条出边各“发射”一枚筹码到所指向的点。换句话说，如果这个点的出度是 n，那么这个点上的筹码减少 n，而其出边所指向的每个点各增加 1 枚筹码。以下是两种不同筹码配置的发射过程：
 
-![](image-3.gif)
+![](https://raw.githubusercontent.com/YouhuaLi/ten-steps-ten-thousand-degrees/main/article/image-3.gif)
 
 可以看到第一种筹码配置下，1次发射后，就进入稳定状态。第二种配置下，无论如何发射，都不会进入稳定状态。看到这种情况，相信你很快会产生一系列疑问：
 
@@ -162,7 +162,7 @@ $$
 ---
 **沙堆群的运算演示**
 
-![alt text](image-4.png)
+![alt text](https://raw.githubusercontent.com/YouhuaLi/ten-steps-ten-thousand-degrees/main/article/image-4.png)
 
 上图中：非汇点 $a,b,c$，全局汇点 $d$；边为 $a\leftrightarrow b$，$b\leftrightarrow c$，$a\to d$，$c\to d$。三个非汇点出度都是 2。按 $a,b,c$ 顺序，
 
@@ -282,13 +282,13 @@ $$
 
 沙堆模型的一个特点是在大尺度下，会呈现一些“自发”形成的组织结构。比如考察很大的正方形“沙堆”，即双向图为正方形网格，所有边界点连接到一个全局汇点，其单位元的样子如下：
 
-![](image-5.png)
+![](https://raw.githubusercontent.com/YouhuaLi/ten-steps-ten-thousand-degrees/main/article/image-5.png)
 
 其中左上为 128×128，右上为 198×198，左下为 243×243，右下为 521×521。不同颜色对应不同的数字，橙色=0，红色=1，绿色=2，蓝色=3。可以看到图像呈现某种颇具神秘感的组织结构。
 
 如果在一个无限网格的原点一次性撒入 3 千万粒沙子，按照筹码发射规则发射到稳定，最终会呈现下面的图像（白色 0 粒、绿色 1 粒、紫色 2 粒、金色 3 粒）：
 
-![alt text](image-6.png)
+![alt text](https://raw.githubusercontent.com/YouhuaLi/ten-steps-ten-thousand-degrees/main/article/image-6.png)
 
 转子路由群
 =
@@ -583,7 +583,7 @@ $P_p$ 是周期为 $p$ 的幂的那些局面。任何一个局面都唯一地分
 ==
 既然有群，必有单位元。也就是存在某些点击组合，点击后，局面总是回到原先状态。之前提到过一个总点击次数为 52 次的单位元 $I$，它是单位元的唯一常返代表。而点击次数最少的单位元代表只需 20 次，共有三种：
 
-![单位元的三个 20 次点击代表](identity_min.png)
+![单位元的三个 20 次点击代表](https://raw.githubusercontent.com/YouhuaLi/ten-steps-ten-thousand-degrees/main/article/identity_min.png)
 
 不信的话，你可以在游戏中按以上数字所示，点击对应的格子相应次数，看局面是否回到初始状态。
 
@@ -771,7 +771,7 @@ $$
 
 即 $x$ 属于邻接矩阵在 $\mathrm{GF}(2)$ 上的核。这个核的维数是 5，恰与五个不变因子都是偶数对应，所以阶为 2 的元素共 $2^5-1=31$ 个。对每个 $x$ 取 $\sigma_0=\Delta'x/2$，再抬成非负的最少点击代表（方法见下）。点击次数最少的那个只要 **10 次**：
 
-![阶为 2 的最少点击元素](order2_min.png)
+![阶为 2 的最少点击元素](https://raw.githubusercontent.com/YouhuaLi/ten-steps-ten-thousand-degrees/main/article/order2_min.png)
 
 对应的 $x$ 是最外圈 16 格加中心。它正好是单位元代表 $\sigma_3$ 的一半。模拟验证：点一遍后箭头不是全朝上（42 次旋转，3780°），点两遍后回到全朝上（共 140 次旋转）。它恰好是一个 10 步的局面：十步万度里存在 10 次点击，重复一遍就把棋盘复原。31 个阶为 2 的元素的最少点击数依次为
 
@@ -816,7 +816,7 @@ n步游戏的最佳玩法
 
 下面 12 张图分别是 n=1 到 12 步的最优点击方案。每格大数字是该格的点击次数，右上角小箭头是点完后该格的最终朝向（灰色表示仍朝上）。
 
-![1 到 12 步的最佳玩法](opt_all.png)
+![1 到 12 步的最佳玩法](https://raw.githubusercontent.com/YouhuaLi/ten-steps-ten-thousand-degrees/main/opt_all.png)
 
 | n | 最优点击多重集（行,列） | 旋转数 | 度数 |
 |---|---|---|---|
@@ -848,6 +848,11 @@ n=1 到 4 和 n=8 到 10 各有多个最优解，图中画的是字典序第一�
 - **最优解不能逐步叠加。** 除 n=1 到 2 外，任何 n 的最优解都不包含在 n+1 的任何最优解里，贪心策略一定失败。n=10 的解里 (0,0)、(0,4)、(4,4) 三个角都要点，而 n=11 的解却是 11 次全点中心。
 - **n=10 的终态是一条螺旋。** 点完后 25 个箭头首尾相接，从中心开始顺时针向外盘旋，经过每一格恰好一次，最后从左下角 (4,0) 出界。这是一棵「最长的」生成树，整棵树只有一条路径。
 - **次序不改总分，但能改「戏剧性」。** 同样这 10 次点击，若按 (0,0), (0,4), (1,3), (2,2), (2,2), (3,2), (3,3), (4,1), (4,4), (1,1) 的次序，前 9 次只转 31 次，最后一次点击引发连续 89 次旋转，一击 8010°。最平均的次序里单次最长也有 66 次。
+
+  下面的动画按这个次序演示全部 10 次点击，前 9 次每次只转几下，第 10 次点击 (1,1) 后连锁 89 次：
+
+  ![最后一次点击引发连续 89 次旋转](https://raw.githubusercontent.com/YouhuaLi/ten-steps-ten-thousand-degrees/main/article/chain89.gif)
+
 - **前 10 步沾了「开局」的光。** 长期来看每步最多只值 $1080/104\approx10.4$ 次旋转（反复点中心，104 次一个周期），而前 10 步能做到 12。多出来的部分来自全朝上的初始棋盘储存的「势能」，也就是分数公式里的 $\tau^{\mathsf T}(p-r)$ 项。
 - **解的形状。** n=3 到 10 的最优解都从左上角 (0,0) 出发沿主对角线方向铺开，n=10 的解是一个近似的 X 形：三个角加上两条对角线上的内环格。n=11、12 则完全换成「中心轰炸」。12 步的 140 次旋转恰好与单位元代表 $\sigma_3$ 的旋转数相同，不过只是巧合。
 
