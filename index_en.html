@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ten Steps, Ten Thousand Degrees</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Ten Steps, Ten Thousand Degrees</h1>
+            <div class="game-info">
+                <div class="operations-left">
+                    Clicks left: <span id="operationsLeft">10</span>
+                </div>
+                <div class="score">
+                    Total degrees: <span id="score">0°</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-board">
+                <div class="grid-container" id="gridContainer">
+                    <!-- the 5x5 grid is built by JavaScript -->
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="newGameBtn" class="btn btn-primary">New game</button>
+                <button id="resetBtn" class="btn btn-secondary">Reset</button>
+                <div class="speed-selector">
+                    <label for="speed">Speed:</label>
+                    <select id="speed">
+                        <option value="slow">Slow</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="fast">Fast</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="rules">
+                <h3>Rules:</h3>
+                <ul>
+                    <li>Click a circle and its pointer turns 90° clockwise</li>
+                    <li>If the pointer now points at another circle, that circle turns 90° too</li>
+                    <li>The chain reaction can keep going</li>
+                    <li>Each rotation adds 90 degrees</li>
+                    <li>You have 10 clicks in total</li>
+                    <li>Goal: a total rotation of 10,000 degrees</li>
+                </ul>
+            </div>
+        </main>
+
+        <div id="gameMessage" class="message hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

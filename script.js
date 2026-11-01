@@ -1,10 +1,28 @@
+// 界面文字：英文页面 (<html lang="en">) 用英文
+const EN = document.documentElement.lang === 'en';
+const TEXT = EN ? {
+    start: n => `Game on! Goal: ${n} degrees in 10 clicks`,
+    notStarted: 'Start a new game first!',
+    noClicksLeft: 'No clicks left!',
+    reached: n => `Congratulations! You reached ${n} degrees!`,
+    won: d => `Goal reached! Total rotation: ${d} degrees`,
+    over: (d, n) => `Game over! Total rotation: ${d} degrees, goal: ${n} degrees`,
+} : {
+    start: n => `游戏开始！目标：用10次操作达到${n}度`,
+    notStarted: '请先开始新游戏！',
+    noClicksLeft: '操作次数已用完！',
+    reached: n => `恭喜！达到目标${n}度！`,
+    won: d => `恭喜完成目标！总旋转度数: ${d}度`,
+    over: (d, n) => `游戏结束！总旋转度数: ${d}度，目标: ${n}度`,
+};
+
 class TenKDegreesGame {
     constructor() {
         this.gridSize = 5;
         this.maxOperations = 10;
         this.operationsLeft = 10;
         this.totalDegrees = 0;
-        this.targetDegrees = 100000;
+        this.targetDegrees = 10000;
         this.blocks = [];
         this.gameActive = false;
         this.animationSpeed = 300; // medium speed
@@ -107,7 +125,7 @@ class TenKDegreesGame {
         
         this.updateAllBlockColors();
         this.updateDisplay();
-        this.showMessage(`游戏开始！目标：用10次操作达到${this.targetDegrees.toLocaleString()}度`, 'success', 3000);
+        this.showMessage(TEXT.start(this.targetDegrees.toLocaleString()), 'success', 3000);
     }
     
     resetGame() {
@@ -127,12 +145,12 @@ class TenKDegreesGame {
     
     async handleBlockClick(row, col) {
         if (!this.gameActive) {
-            this.showMessage('请先开始新游戏！', 'error', 1500);
+            this.showMessage(TEXT.notStarted, 'error', 1500);
             return;
         }
         
         if (this.operationsLeft <= 0) {
-            this.showMessage('操作次数已用完！', 'error', 1500);
+            this.showMessage(TEXT.noClicksLeft, 'error', 1500);
             return;
         }
         
@@ -146,7 +164,7 @@ class TenKDegreesGame {
         
         // 检查游戏结束条件
         if (this.totalDegrees >= this.targetDegrees) {
-            this.showMessage(`恭喜！达到目标${this.targetDegrees.toLocaleString()}度！`, 'success', 3000);
+            this.showMessage(TEXT.reached(this.targetDegrees.toLocaleString()), 'success', 3000);
             this.gameActive = false;
         } else if (this.operationsLeft <= 0) {
             this.endGame();
@@ -265,8 +283,8 @@ class TenKDegreesGame {
     endGame() {
         this.gameActive = false;
         const message = this.totalDegrees >= this.targetDegrees 
-            ? `恭喜完成目标！总旋转度数: ${this.totalDegrees.toLocaleString()}度`
-            : `游戏结束！总旋转度数: ${this.totalDegrees.toLocaleString()}度，目标: ${this.targetDegrees.toLocaleString()}度`;
+            ? TEXT.won(this.totalDegrees.toLocaleString())
+            : TEXT.over(this.totalDegrees.toLocaleString(), this.targetDegrees.toLocaleString());
         this.showMessage(message, 'success', 4000);
     }
     
